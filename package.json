@@ -1,5 +1,5 @@
 {
-  "name": "vue-manage-system",
+  "name": "way-jasy-cron-fe",
   "version": "4.2.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "date-fns": "^2.16.1",
     "element-ui": "^2.11.0",
+    "jsencrypt": "^3.0.0-rc.1",
+    "lodash": "^4.17.20",
     "mavon-editor": "^2.6.17",
     "vue": "^2.6.10",
     "vue-cropperjs": "^3.0.0",

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
+import JobList from '../components/page/job_http.vue'
+import JobList2 from '../components/page/job_shell.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -25,9 +26,14 @@ export default new Router({
                     meta: { title: '自定义图标' }
                 },
                 {
-                    path: '/table',
-                    component: () => import(/* webpackChunkName: "table" */ '../components/page/BaseTable.vue'),
-                    meta: { title: '基础表格' }
+                    path: '/cron/http',
+                    component: JobList,
+                    meta: { title: 'http定时任务' }
+                },
+                {
+                    path: '/cron/shell',
+                    component: JobList2,
+                    meta: { title: 'shell定时任务' }
                 },
                 {
                     path: '/tabs',

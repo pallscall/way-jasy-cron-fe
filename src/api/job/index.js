@@ -1,16 +1,9 @@
-import request from '../utils/request';
+import request from '../../utils/request';
 
-export const fetchData = query => {
-    return request({
-        url: './table.json',
-        method: 'get',
-        params: query
-    });
-};
 
 export const getJobList = query => {
     return request({
-        url: '/cron',
+        url: '/cron/http',
         method: 'get',
         params: query
     });
@@ -18,15 +11,18 @@ export const getJobList = query => {
 
 export const switchJob = query => {
     return request({
-        url: '/cron/switch',
+        url: '/cron/http/switch',
         method: 'post',
-        params: query
+        params: query,
+        headers: {
+            'access_key': localStorage.getItem('access_key')
+        }
     });
 };
 
 export const addJob = query => {
     return request({
-        url: '/cron/create',
+        url: '/cron/http/create',
         method: 'post',
         data: query
     });
@@ -34,7 +30,7 @@ export const addJob = query => {
 
 export const updateJob = query => {
     return request({
-        url: '/cron/update',
+        url: '/cron/http/update',
         method: 'post',
         data: query
     });
